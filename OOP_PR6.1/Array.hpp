@@ -60,6 +60,5 @@ public:
 
     value_type sum();
     value_type average();
-    void add_sum_and_average();
     void add_absolute_non_pair();
 };

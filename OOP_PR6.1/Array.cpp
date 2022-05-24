@@ -177,27 +177,19 @@ Array::value_type Array::average()
     return abs(average);
 }
 
-void Array::add_sum_and_average()
-{
-    double int_sum = sum();
-    double int_average = average();
-    for (int i = 0; i < Count; i++)
-        elems[i] += int_sum + int_average;
-}
-
 void Array::add_absolute_non_pair()
 {
-    value_type first = elems[0];
     for (int i = 0; i < Count; i++)
     {
         int a = elems[i];
         if (a % 2 != 0)
         {
-            first = elems[i];
+            value_type mean = abs(a);
+            for (int i = 0; i < Count; i++)
+            {
+                elems[i] += mean;
+            }
             break;
         }
     }
-    value_type mean = abs(first);
-    for (int i = 0; i < Count; i++)
-        elems[i] += mean;
 }
